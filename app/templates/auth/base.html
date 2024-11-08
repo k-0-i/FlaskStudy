@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Welcome To Here</title>
+    {% endif %}
+</head>
+<body>
+<div><a href="{{ url_for('auth.login') }}">登陆</a> </div>
+<div><a href="{{ url_for('auth.register') }}">注册</a> </div>
+{% block content %}Default Page{% endblock %}
+</body>
+</html>
