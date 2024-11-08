@@ -1,0 +1,19 @@
+# 缓存和编译文件
+__pycache__/
+*.pyc
+
+# 数据库文件
+app.db
+
+# 虚拟环境
+#venv/
+
+# 环境变量和配置文件
+.env
+
+# 迁移文件夹中的缓存
+migrations/__pycache__/
+
+# 配置文件
+.idea/
+*.iml

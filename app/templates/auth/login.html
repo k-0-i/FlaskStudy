@@ -1,0 +1,41 @@
+{% extends "auth/base.html" %}
+
+{% block content %}
+    {% if title %}
+        <h1> {{ title }} </h1>
+    {% else %}
+        <h1> Welcome To Here</h1>
+    {% endif %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {#    Username Label #}
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {#    Password Label #}
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        {#        {% set messages = get_flashed_messages() %}#}
+        {#        {% if messages %}#}
+        {#            <ul>#}
+        {#                {% for message in messages %}#}
+        {#                    <li>{{ message }}</li>#}
+        {#                {% endfor %}#}
+        {#            </ul>#}
+        {#        {% endif %}#}
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
